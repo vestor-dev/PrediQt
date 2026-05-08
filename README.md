@@ -220,7 +220,7 @@ prediqt/
 
 ---
 
-## Out of scope (v1)
+## Out of Scope (v1)
 
 Prediqt is an MVP for the Zama Developer Program. The following are deliberately not built:
 
