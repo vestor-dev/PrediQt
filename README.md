@@ -27,7 +27,7 @@ That's fine when the question is "Will Brazil win the World Cup?" It is not fine
 
 The moment positions are visible, two things break: **incentives** (you can be bullied or punished for your bet) and **honesty** (you start betting what looks good, not what you think). Most of the world's interesting questions never become markets because no one wants their answer publicly attached to their wallet.
 
-## The solution
+## The Solution
 
 Prediqt is a prediction market where **individual positions are encrypted** but the aggregate price is still public. You see the crowd's belief; nobody sees yours.
 
