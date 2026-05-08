@@ -1,0 +1,32 @@
+{
+  "name": "prediqt",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Private prediction market — bet on anything, with anyone, privately. Powered by Zama FHE.",
+  "scripts": {
+    "web": "pnpm --filter @prediqt/web dev",
+    "web:build": "pnpm --filter @prediqt/web build",
+    "contracts:compile": "pnpm --filter @prediqt/contracts compile",
+    "contracts:test": "pnpm --filter @prediqt/contracts test",
+    "contracts:node": "pnpm --filter @prediqt/contracts node:local",
+    "contracts:deploy:local": "pnpm --filter @prediqt/contracts deploy:local",
+    "contracts:deploy:sepolia": "pnpm --filter @prediqt/contracts deploy:sepolia",
+    "contracts:deploy:week3:sepolia": "pnpm --filter @prediqt/contracts deploy:week3:sepolia",
+    "contracts:deploy:week4:sepolia": "pnpm --filter @prediqt/contracts deploy:week4:sepolia",
+    "contracts:setup:agents:sepolia": "pnpm --filter @prediqt/contracts setup:agents:sepolia",
+    "contracts:resolve:sepolia": "pnpm --filter @prediqt/contracts resolve:sepolia",
+    "shared:build": "pnpm --filter @prediqt/shared build",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,sol,md,json}\"",
+    "lint": "pnpm -r lint"
+  },
+  "devDependencies": {
+    "prettier": "^3.3.3",
+    "prettier-plugin-solidity": "^1.4.1",
+    "typescript": "^5.6.3"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "pnpm": ">=9.0.0"
+  },
+  "packageManager": "pnpm@10.28.1"
+}

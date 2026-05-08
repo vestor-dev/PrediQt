@@ -1,0 +1,144 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-display: 'Instrument Serif', serif;
+    --font-sans: 'Geist', system-ui, sans-serif;
+    --font-mono: 'Geist Mono', ui-monospace, monospace;
+  }
+
+  html {
+    color-scheme: dark;
+    background: #09090B;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply bg-canvas text-ink font-sans min-h-screen;
+  }
+
+  ::selection {
+    background: #CAFF3C;
+    color: #09090B;
+  }
+
+  .tabular {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: 'tnum';
+  }
+
+  /* Custom scrollbar — thin, dark */
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.08); border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.14); }
+}
+
+@layer components {
+  /* ── Typography ── */
+  .heading-display {
+    @apply font-display tracking-crunch;
+  }
+
+  .label {
+    @apply font-mono text-[11px] uppercase tracking-[0.12em] text-ink-muted;
+  }
+
+  /* ── Surfaces ── */
+  .surface {
+    @apply bg-canvas-elevated border border-line rounded-2xl shadow-card;
+  }
+
+  .surface-glass {
+    @apply bg-glass backdrop-blur-xl border border-line rounded-2xl shadow-card;
+  }
+
+  .surface-glass-strong {
+    @apply bg-glass-strong backdrop-blur-2xl border border-line-strong rounded-2xl shadow-card;
+  }
+
+  /* ── Interactive surface — lifts on hover ── */
+  .surface-interactive {
+    @apply surface transition-all duration-300 ease-out
+      hover:shadow-card-hover hover:border-line-strong hover:-translate-y-0.5;
+  }
+
+  /* ── Focus ring ── */
+  .ring-focus {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-volt/50
+      focus-visible:ring-offset-2 focus-visible:ring-offset-canvas;
+  }
+
+  /* ── Glow dot (live indicator) ── */
+  .dot-live {
+    @apply relative inline-block w-1.5 h-1.5 rounded-full bg-up;
+  }
+  .dot-live::after {
+    content: '';
+    @apply absolute inset-0 rounded-full bg-up animate-ping;
+  }
+
+  /* ── Volt accent dot ── */
+  .q-dot {
+    @apply inline-block w-1.5 h-1.5 rounded-full bg-volt;
+  }
+
+  /* ── Edge-fade mask (used by marquees) ── */
+  .mask-fade-x {
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 8%, #000 92%, transparent 100%);
+            mask-image: linear-gradient(to right, transparent 0%, #000 8%, #000 92%, transparent 100%);
+  }
+
+  /* ── Aurora glow background — used behind hero CTA ── */
+  .aurora-glow {
+    background:
+      radial-gradient(60% 60% at 30% 30%, rgba(202,255,60,0.18), transparent 60%),
+      radial-gradient(45% 45% at 80% 70%, rgba(123,208,255,0.10), transparent 65%);
+  }
+
+  /* ── Shimmer skeleton ── */
+  .skeleton {
+    @apply relative overflow-hidden bg-canvas-raised rounded-xl;
+  }
+  .skeleton::after {
+    content: '';
+    @apply absolute inset-0;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.03), transparent);
+    animation: shimmer 2s linear infinite;
+  }
+
+  /* ── Sparkline container ── */
+  .sparkline {
+    @apply inline-flex items-end h-6 gap-[1px];
+  }
+
+  /* ── Probability bar ── */
+  .prob-track {
+    @apply relative h-1.5 rounded-full overflow-hidden;
+    background: rgba(255,255,255,0.04);
+  }
+
+  .prob-fill-yes {
+    @apply absolute inset-y-0 left-0 rounded-full;
+    background: linear-gradient(90deg, #CAFF3C, #9BCC1F);
+    transition: width 1s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .prob-fill-no {
+    @apply absolute inset-y-0 right-0 rounded-full;
+    background: linear-gradient(270deg, #EF4444, #DC2626);
+    transition: width 1s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+}
+
+/* ── Grain overlay ── */
+.grain-noise {
+  background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.08 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  background-size: 200px 200px;
+  mix-blend-mode: overlay;
+  opacity: 0.5;
+}
