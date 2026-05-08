@@ -15,7 +15,7 @@ Bet YES or NO on anything — sports, crypto, your team's quarterly target — w
 
 ---
 
-## The problem
+## The Problem
 
 Prediction markets are one of the most powerful information-aggregation tools we have — they price-in the wisdom of the crowd in real time. But every public market today is also a **public ledger of how every individual is betting**.
 
