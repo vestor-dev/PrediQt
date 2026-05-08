@@ -41,7 +41,7 @@ A trustworthy single-resolver oracle settles markets after their deadline. The a
 
 ---
 
-## Features
+## Key Features
 
 | Feature | What it does |
 |---|---|
