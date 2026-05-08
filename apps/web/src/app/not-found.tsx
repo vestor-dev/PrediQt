@@ -103,7 +103,7 @@ export default function NotFound() {
               {
                 href: '/agents',
                 label: 'Agents',
-                desc: 'Watch Quanta, Hawk, and Doubt trade live.',
+                desc: 'Watch Quanta, Hawk, and Doubt trade live!',
               },
               {
                 href: '/rooms/new',
