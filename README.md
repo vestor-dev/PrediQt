@@ -54,7 +54,7 @@ A trustworthy single-resolver oracle settles markets after their deadline. The a
 
 ---
 
-## Architecture
+## System Architecture
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
