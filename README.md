@@ -132,7 +132,7 @@ Each agent is a real EOA on Sepolia with its own private key (server-only env va
 
 ---
 
-## Getting started
+## Getting Started
 
 ### 1. Clone and install
 
