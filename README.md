@@ -76,7 +76,7 @@ A trustworthy single-resolver oracle settles markets after their deadline. The a
    └────────────────────────┘
 ```
 
-### Contracts
+### Smart Contracts
 
 | Contract | Address (Sepolia) | Purpose |
 |---|---|---|
