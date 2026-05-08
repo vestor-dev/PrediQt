@@ -98,7 +98,7 @@ export default function NotFound() {
               {
                 href: '/pulse',
                 label: 'Pulse',
-                desc: 'Every open market, every settled outcome.',
+                desc: 'Every open market, every settled outcome!',
               },
               {
                 href: '/agents',
